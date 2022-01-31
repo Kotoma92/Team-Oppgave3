@@ -1,0 +1,27 @@
+* {
+	background-color: aqua;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	max-width: 100ch;
+	padding: 2ch;
+	margin: auto;
+	font-size: 1.2em;
+}
+h2 {
+	text-align: center;
+	border: solid 2;
+}
+
+div {
+	background-color: lightgray;
+	border: solid 2px;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+}
+
+img {
+	max-width: 200px;
+}

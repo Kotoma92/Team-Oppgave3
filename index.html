@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Team Oppgave 3</title>
+</head>
+<body>
+    <h2 style="text-align: center;">Team 4: Teacher Royale</h2>
+    <div id="app"></div>
+<script>
+
+    // Modell <-> Controller <-> View
+
+    //Modell
+    var max = '2';
+    var min = '0';
+    var computerRandom = '';
+    var teacher = '';
+
+    //Linn slår Therese
+    //Therese slår Erlend
+    //Erlend slår Linn av en eller annen grunn
+
+    //View
+    
+    function startGame() { 
+        document.getElementById('app').innerHTML =/*html*/ `
+        <div class='button' onclick="gameGo('Linn')">Linn</div>
+        <div class='button' onclick="gameGo('Therese')">Therese</div>
+        <div class='button' onclick="gameGo('Erlend')">Erlend</div>
+        `;
+    }
+    
+    function uavgjort() { 
+        document.getElementById('app').innerHTML =/*html*/ `
+        <div>Uavgjort!</div>
+        <button onclick="tryAgain()">Prøv igjen</button>
+        `;
+    }
+
+    function linnWon() { 
+        document.getElementById('app').innerHTML =/*html*/ `
+        <div>Linn Vant</div>
+        <button onclick="tryAgain()">Prøv igjen</button>
+        `;
+    }
+
+    function thereseWon() { 
+        document.getElementById('app').innerHTML =/*html*/ `
+        <div>Therese Vant</div>
+        <button onclick="tryAgain()">Prøv igjen</button>
+        `;
+    }
+
+    function erlendWon() { 
+        document.getElementById('app').innerHTML =/*html*/ `
+        <div>Erlend Vant</div>
+        <button onclick="tryAgain()">Prøv igjen</button>
+        <br>
+        <img src="/img/erlend.jpg">
+        `;
+    }
+
+    function linnLost() { 
+        document.getElementById('app').innerHTML =/*html*/ `
+        <div>Linn Tapte :(</div>
+        <button onclick="tryAgain()">Prøv igjen</button>
+        `;
+    }
+
+    function thereseLost() { 
+        document.getElementById('app').innerHTML =/*html*/ `
+        <div>Therese Tapte</div>
+        <button onclick="tryAgain()">Prøv igjen</button>
+        `;
+    }
+
+    function erlendLost() { 
+        document.getElementById('app').innerHTML =/*html*/ `
+        <div>Erlend Tapte og klikka</div>
+        <button onclick="tryAgain()">Prøv igjen</button>
+        `;
+    }
+
+    //Controller
+    //Når man trykker på en lærer så kjører funksjonen gameGo,
+    //da kjører computerRandom et math.random tall mellom 0 og 2,
+    //også velger den en av 3 if setninger. Etter det så ser funksjonen hvilken lærer man trykket på gjennom parameter.
+    //Etter det så kjører man funksjonen inne i hvilken if setning som blir valgt.
+
+    function gameGo(chosenOne) {
+        computerRandom = Math.round(Math.random() * (max - min) + min);
+        console.log("Du har klikket på knappen");
+        console.log("Computer har valgt tallet " + computerRandom);
+        teacher = chosenOne;
+        
+        if(computerRandom == 0) {
+            
+            if(teacher == 'Linn'){
+                console.log("Du har valgt Linn mot Linn")
+                uavgjort();
+            }
+            if(teacher == 'Therese'){
+                console.log("Du har valgt Therese mot Linn")
+                thereseLost();
+            }
+            if(teacher == 'Erlend'){
+                console.log("Du har valgt Erlend mot Linn")
+                erlendWon();
+            }   
+        }
+
+        if(computerRandom == 1) {
+            if(teacher == 'Linn'){
+                console.log("Du har valgt Linn mot Therese")
+                linnWon();
+            }
+            if(teacher == 'Therese'){
+                console.log("Du har valgt Therese mot Therese")
+                uavgjort();
+            }
+            if(teacher == 'Erlend'){
+                console.log("Du har valgt Erlend mot Therese")
+                erlendLost();
+            } 
+        }
+
+        if(computerRandom == 2) {
+            if(teacher == 'Linn'){
+                console.log("Du har valgt Linn mot Erlend")
+                linnLost();
+            } 
+            if(teacher == 'Therese'){
+                console.log("Du har valgt Therese mot Erlend")
+                thereseWon();
+            } 
+            if(teacher == 'Erlend'){
+                console.log("Du har valgt Erlend mot Erlend")
+                uavgjort();
+            } 
+        }
+    }
+
+    function tryAgain() {
+        startGame();
+    }
+
+    startGame();
+    
+</script>
+</body>
+</html>
