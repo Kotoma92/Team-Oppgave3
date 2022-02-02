@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="style.css">
     <title>Team Oppgave 3</title>
 </head>
-<body>
-    <h2 style="text-align: center;">Team 4: Teacher Royale</h2>
+<body class="bgImage">
+    <img class="titlePicture" src="img/download.png"/>
+    
+    <br>
     <div id="app"></div>
 <script>
 
@@ -25,63 +27,76 @@
     //Erlend slår Linn av en eller annen grunn
 
     //View
-    
     function startGame() { 
         document.getElementById('app').innerHTML =/*html*/ `
-        <div class='button' onclick="gameGo('Linn')">Linn</div>
-        <div class='button' onclick="gameGo('Therese')">Therese</div>
-        <div class='button' onclick="gameGo('Erlend')">Erlend</div>
-        `;
+        <div class="startPictures">
+        <img class="linnStart" onclick="gameGo('Linn')" src="/img/linn3.png" />
+        
+        <img class="thereseStart" onclick="gameGo('Therese')" src="/img/therese2.jpg" />
+        
+        <img class="erlendStart" onclick="gameGo('Erlend')" src="/img/PandaErlendPNG.png">
+        </div>
+        `
     }
     
     function uavgjort() { 
         document.getElementById('app').innerHTML =/*html*/ `
-        <div>Uavgjort!</div>
-        <button onclick="tryAgain()">Prøv igjen</button>
+        <div class="gameText">Uavgjort!</div>
+        <a><button href="#" class="myButton" onclick="tryAgain()">Prøv igjen</button></a>
         `;
     }
 
     function linnWon() { 
         document.getElementById('app').innerHTML =/*html*/ `
-        <div>Linn Vant</div>
-        <button onclick="tryAgain()">Prøv igjen</button>
+        <div class="gameText">Linn vant over Therese!!!</div>
+        <a><button href="#" class="myButton" onclick="tryAgain()">Prøv igjen</button></a>
+        <br>
+        <img class="gamePic" src="/img/linnwin.png" />
         `;
     }
 
     function thereseWon() { 
         document.getElementById('app').innerHTML =/*html*/ `
-        <div>Therese Vant</div>
-        <button onclick="tryAgain()">Prøv igjen</button>
+        <div class="gameText">Therese vant over Erlend!!!</div>
+        <a><button href="#" class="myButton" onclick="tryAgain()">Prøv igjen</button></a>
+        <br>
+        <img class="gamePic" src="/img/ThereseGodkjent.png" />
         `;
     }
 
     function erlendWon() { 
         document.getElementById('app').innerHTML =/*html*/ `
-        <div>Erlend Vant</div>
-        <button onclick="tryAgain()">Prøv igjen</button>
+        <div class="gameText">Erlend vant over Linn!!!</div>
+        <a><button href="#" class="myButton" onclick="tryAgain()">Prøv igjen</button></a>
         <br>
-        <img src="/img/erlend.jpg">
+        <img class="gamePic" src="/img/erlend2.jpg">
         `;
     }
 
     function linnLost() { 
         document.getElementById('app').innerHTML =/*html*/ `
-        <div>Linn Tapte :(</div>
-        <button onclick="tryAgain()">Prøv igjen</button>
+        <div class="gameText">Linn tapte mot Erlend :(</div>
+        <a><button href="#" class="myButton" onclick="tryAgain()">Prøv igjen</button></a>
+        <br>
+        <img class="gamePic" src="/img/linn.jpg"/>
         `;
     }
 
     function thereseLost() { 
         document.getElementById('app').innerHTML =/*html*/ `
-        <div>Therese Tapte</div>
-        <button onclick="tryAgain()">Prøv igjen</button>
+        <div class="gameText">Therese tapte mot Linn :(</div>
+        <a><button href="#" class="myButton" onclick="tryAgain()">Prøv igjen</button></a>
+        <br>
+        <img class="gamePic" src="https://scontent.fosl3-1.fna.fbcdn.net/v/t39.30808-6/272624426_1565832077109015_5439012637892514542_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=tCI_V3s8jUEAX_WyubT&tn=kvgEC7N8g8UF-JdR&_nc_ht=scontent.fosl3-1.fna&oh=00_AT-1NZwQTrTCCxxlJLWBhnS4vJTn8d7saewz-Jjju2JnGw&oe=61FE44BC" />
         `;
     }
 
     function erlendLost() { 
         document.getElementById('app').innerHTML =/*html*/ `
-        <div>Erlend Tapte og klikka</div>
-        <button onclick="tryAgain()">Prøv igjen</button>
+        <div class="gameText">Erlend tapte mot Therese og er lei seg :(</div>
+        <a><button href="#" class="myButton" onclick="tryAgain()">Prøv igjen</button></a>
+        <br>
+        <img class="gamePic" src="/img/Erlend.jpg">
         `;
     }
 
