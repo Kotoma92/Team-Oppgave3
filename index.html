@@ -21,7 +21,7 @@
     var min = '0';
     var computerRandom = '';
     var teacher = '';
-
+    
     //Linn slår Therese
     //Therese slår Erlend
     //Erlend slår Linn av en eller annen grunn
@@ -32,7 +32,7 @@
         <div class="startPictures">
         <img class="linnStart" onclick="gameGo('Linn')" src="/img/linn3.png" />
         
-        <img class="thereseStart" onclick="gameGo('Therese')" src="/img/therese2.jpg" />
+        <img class="thereseStart" onclick="gameGo('Therese')" src="/img/thereseyouthere.png" />
         
         <img class="erlendStart" onclick="gameGo('Erlend')" src="/img/PandaErlendPNG.png">
         </div>
@@ -46,14 +46,14 @@
         
         <img class="tie" src="/img/linn.jpg" />
         <img class="tie" src="/img/Erlend.jpg" />
-        <img class="tie" src="/img/therese.jpg" />
+        <img class="tie" src="/img/chefTherese.png" />
         
         `;
     }
 
     function linnWon() { 
         document.getElementById('app').innerHTML =/*html*/ `
-        <div class="gameText">Linn vant over Therese!!!</div>
+        <div class="gameText">Computer valgte Therese, så Linn vant!</div>
         <a><button href="#" class="myButton" onclick="tryAgain()">Prøv igjen</button></a>
         <br>
         <img class="gamePic" src="/img/linnwin.png" />
@@ -62,7 +62,7 @@
 
     function thereseWon() { 
         document.getElementById('app').innerHTML =/*html*/ `
-        <div class="gameText">Therese vant over Erlend!!!</div>
+        <div class="gameText">Computer valgte Erlend så Therese vant!</div>
         <a><button href="#" class="myButton" onclick="tryAgain()">Prøv igjen</button></a>
         <br>
         <img class="gamePic" src="/img/ThereseGodkjent.png" />
@@ -71,7 +71,7 @@
 
     function erlendWon() { 
         document.getElementById('app').innerHTML =/*html*/ `
-        <div class="gameText">Erlend vant over Linn!!!</div>
+        <div class="gameText">Computer valgte Linn, så Erlend vant!</div>
         <a><button href="#" class="myButton" onclick="tryAgain()">Prøv igjen</button></a>
         <br>
         <img class="gamePic" src="/img/erlend2.jpg">
@@ -80,7 +80,7 @@
 
     function linnLost() { 
         document.getElementById('app').innerHTML =/*html*/ `
-        <div class="gameText">Linn tapte mot Erlend :(</div>
+        <div class="gameText">Computer valgte Erlend, så Linn tapte :(</div>
         <a><button href="#" class="myButton" onclick="tryAgain()">Prøv igjen</button></a>
         <br>
         <img class="gamePic" src="/img/linn.jpg"/>
@@ -89,16 +89,16 @@
 
     function thereseLost() { 
         document.getElementById('app').innerHTML =/*html*/ `
-        <div class="gameText">Therese tapte mot Linn :(</div>
+        <div class="gameText">Computer valgte Linn, så Therese tapte :(</div>
         <a><button href="#" class="myButton" onclick="tryAgain()">Prøv igjen</button></a>
         <br>
-        <img class="gamePic" src="https://scontent.fosl3-1.fna.fbcdn.net/v/t39.30808-6/272624426_1565832077109015_5439012637892514542_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=tCI_V3s8jUEAX_WyubT&tn=kvgEC7N8g8UF-JdR&_nc_ht=scontent.fosl3-1.fna&oh=00_AT-1NZwQTrTCCxxlJLWBhnS4vJTn8d7saewz-Jjju2JnGw&oe=61FE44BC" />
+        <img class="gamePic" src="/img/thereselost.png" />
         `;
     }
 
     function erlendLost() { 
         document.getElementById('app').innerHTML =/*html*/ `
-        <div class="gameText">Erlend tapte mot Therese og er lei seg :(</div>
+        <div class="gameText">Computer valgte Therese, så Erlend tapte :(</div>
         <a><button href="#" class="myButton" onclick="tryAgain()">Prøv igjen</button></a>
         <br>
         <img class="gamePic" src="/img/Erlend.jpg">
@@ -118,7 +118,6 @@
         teacher = chosenOne;
         
         if(computerRandom == 0) {
-            
             if(teacher == 'Linn'){
                 console.log("Du har valgt Linn mot Linn")
                 uavgjort();

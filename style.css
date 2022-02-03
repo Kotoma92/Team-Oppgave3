@@ -35,7 +35,8 @@ h1 {
 }
 
 .gameText {
-	color: rgb(9, 214, 9);
+	color: #27d4ff;
+	text-shadow: 3px -2px 0px #3122ff;
 	font-family: monospace;
 	font-weight: bolder;
 	outline-color: black;
@@ -56,60 +57,65 @@ h1 {
 
 .erlendStart {
 	position: absolute;
-	bottom: 200px;
-	right: 300px;
+	bottom: 175px;
+	right: 275px;
 	max-height: 40vh;
 	max-width: 30vh;
+	overflow: clip;
+}
+
+.erlendStart:hover {
+	animation: erlend 2s;
+	overflow: clip;
 }
 
 .thereseStart {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	width: 50%;
-	max-height: 25vh;
-	max-width: 25vh;
+	position: absolute;
+	bottom: 250px;
+	left: 500px;
+	max-height: 40vh;
+	max-width: 40vh;
+	overflow: clip;
+}
+
+.thereseStart:hover {
+	animation: therese 2s;
+	overflow: clip;
 }
 
 .linnStart {
 	position: absolute;
-	bottom: 20vh;
-	left: 20vh;
-	max-height: 40vh;
-	max-width: 40vh;
+	bottom: 0px;
+	left: 200px;
+	max-height: 60vh;
+	max-width: 60vh;
+	overflow: clip;
 }
 
-/* div {
-	background-color: lightgray;
-	border: solid 2px;
-	text-align: center;
-	font-family: 'Montserrat', sans-serif;
-} */
-
-/* img {
-	max-width: 200px;
-} */
+.linnStart:hover {
+	animation: linn 2s;
+	overflow: clip;
+}
 
 .myButton {
 	box-shadow: 0px 1px 0px 0px #fff6af;
-	background: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
-	background-color: #ffec64;
+	background: linear-gradient(to bottom, #27d4ff 5%, #2344ff 100%);
+	background-color: #2bc3ff;
 	border-radius: 6px;
-	border: 1px solid #ffaa22;
+	border: 1px solid #27d4ff;
 	display: inline-block;
 	cursor: pointer;
-	color: #333333;
+	color: white;
 	font-family: Arial;
 	font-size: 15px;
-	font-weight: bold;
 	padding: 6px 24px;
 	text-decoration: none;
-	text-shadow: 0px 1px 0px #ffee66;
-	animation: loading 1s /*linear infinite*/;
+	text-shadow: 0px 1px 0px white;
+	animation: button 2s;
 }
 .myButton:hover {
-	background: linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
-	background-color: #ffab23;
+	background: linear-gradient(to bottom, #3122ff 5%, #27d4ff 100%);
+	background-color: #27d4ff;
 }
 .myButton:active {
 	position: relative;
@@ -119,10 +125,29 @@ h1 {
 .tie {
 	max-height: 40vh;
 	max-width: 40vh;
+	justify-content: center;
 }
 
-@keyframes loading {
+@keyframes button {
 	to {
-		transform: rotate(1turn);
+		transform: rotate(2turn) rotateY(2turn);
+	}
+}
+
+@keyframes therese {
+	to {
+		transform: scaleY(3) scaleX(0.7);
+	}
+}
+
+@keyframes erlend {
+	to {
+		transform: scaleX(10);
+	}
+}
+
+@keyframes linn {
+	to {
+		transform: rotateY(2turn);
 	}
 }
